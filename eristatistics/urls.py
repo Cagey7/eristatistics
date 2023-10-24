@@ -19,7 +19,7 @@ from django.urls import include, path, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/macrobulletin/', include('macrobulletin.api.urls')),
+    path('api/v1/macrobulletin/', include('macrobulletin.urls')),
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.authtoken')),
 ]
