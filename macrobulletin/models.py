@@ -1,3 +1,19 @@
 from django.db import models
 
-# Create your models here.
+
+class Topic(models.Model):
+    name = models.CharField(max_length=127, unique=True, verbose_name="Название разделала")
+    slug = models.CharField(max_length=127, unique=True)
+
+    def __str__(self):
+        return f"Название раздела: {self.name}"
+
+
+
+class EconomicIndex(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    slug = models.CharField(max_length=127, unique=True)
+    macro_topic = models.ForeignKey("Topic", on_delete=models.PROTECT)
+    
+    def __str__(self):
+        return f"Название экономического показателя: {self.name}"
