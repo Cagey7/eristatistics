@@ -24,6 +24,13 @@ Then install the dependencies:
 
 Then edit eristatistics/settings/local.py with your database settings.
 
+Make migrations:
+
+```sh
+(venv) $ python manage.py makemigrations --settings=eristatistics.settings.local
+(venv) $ python manage.py migrate --settings=eristatistics.settings.local
+```
+
 Run server:
 
 ```sh

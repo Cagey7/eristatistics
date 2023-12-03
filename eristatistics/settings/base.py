@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
     'macrobulletin.apps.MacrobulletinConfig',
     'users.apps.UsersConfig',
 ]
@@ -48,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'eristatistics.urls'
@@ -126,3 +129,8 @@ DJOSER = {
 }
 
 AUTH_USER_MODEL = 'users.User'
+
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3030',
+]
