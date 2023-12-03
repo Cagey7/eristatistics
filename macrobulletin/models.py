@@ -17,3 +17,11 @@ class EconomicIndex(models.Model):
     
     def __str__(self):
         return f"Название экономического показателя: {self.name}"
+
+
+class Table(models.Model):
+    path = models.CharField(max_length=255, null=True)
+    macro_economic_index = models.ForeignKey("EconomicIndex", on_delete=models.PROTECT)
+
+    def __str__(self):
+        return f"Название экономического показателя: {self.macro_economic_index.name}, название файла: {self.path}"

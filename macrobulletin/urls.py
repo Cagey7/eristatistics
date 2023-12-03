@@ -6,4 +6,6 @@ urlpatterns = [
     path("topics/<int:pk>", TopicAPIDetailView.as_view()),
     path("economic-indices/", EconomicIndexAPIList.as_view()),
     path("economic-indices/<int:pk>", EconomicIndexAPIDetailView.as_view()),
+    path("tables/", TableAPIList.as_view()),
+    path("tables/<int:pk>", TableAPIDetailView.as_view()),
 ]

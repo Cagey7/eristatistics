@@ -21,3 +21,13 @@ class EconomicIndexAPIList(generics.ListCreateAPIView):
 class EconomicIndexAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = EconomicIndex.objects.all()
     serializer_class = EconomicIndexSerializer
+
+
+class TableAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Table.objects.all()
+    serializer_class = TableSerializer
+
+
+class TableAPIList(generics.ListCreateAPIView):
+    queryset = Table.objects.all()
+    serializer_class = TableSerializer
