@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Topic, EconomicIndex
+from .models import Topic, EconomicIndex, Table
 
 
 class TopicAdmin(admin.ModelAdmin):
@@ -14,3 +14,4 @@ class EconomicIndexAdmin(admin.ModelAdmin):
 
 admin.site.register(Topic, TopicAdmin)
 admin.site.register(EconomicIndex, EconomicIndexAdmin)
+admin.site.register(Table)
