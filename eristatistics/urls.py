@@ -14,8 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import sys
 from django.contrib import admin
 from django.urls import include, path, re_path
+from django.conf.urls.static import static
+from eristatistics.settings import base
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +26,6 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.authtoken')),
 ]
+
+if sys.argv[2] == "--settings=eristatistics.settings.local": 
+    urlpatterns += static(base.MEDIA_URL, document_root=base.MEDIA_ROOT)
